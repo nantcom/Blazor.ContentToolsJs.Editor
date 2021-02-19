@@ -182,15 +182,29 @@ in ContentTools Js
 For example of how to use, see: `EditablePage.cs`
 
 ```csharp
-    var mediaTags = new List<HtmlTag>() { HtmlTag.img, HtmlTag.iframe, HtmlTag.video };
-    var tableTags = new List<HtmlTag>() { HtmlTag.table };
-    contentToolsEditor.Styles = new List<Style>()
+@inject ContentToolsJsInterop contentToolsEditor
+
+...
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender && !contentToolsEditor.HasStylesBeenset)
         {
-            new Style("Align Left", "align-left", mediaTags),
-            new Style("Align Right", "align-right", mediaTags),
-            new Style("Full Width", "table-full-width", tableTags),
-            new Style("Layout Fixed", "table-layout-fixed", tableTags),
-            new Style("Layout Auto", "table-layout-auto", tableTags),
-            new Style("Content Align Top", ".table-content-alight-top", tableTags),
-        };
+            var mediaTags = new List<HtmlTag>() { HtmlTag.img, HtmlTag.iframe, HtmlTag.video };
+            var tableTags = new List<HtmlTag>() { HtmlTag.table };
+            contentToolsEditor.Styles = new List<Style>()
+                {
+                    new Style("Align Left", "align-left", mediaTags),
+                    new Style("Align Right", "align-right", mediaTags),
+                    new Style("Full Width", "table-full-width", tableTags),
+                    new Style("Layout Fixed", "table-layout-fixed", tableTags),
+                    new Style("Layout Auto", "table-layout-auto", tableTags),
+                    new Style("Content Align Top", ".table-content-alight-top", tableTags),
+                };
+        }
+
+        await base.OnAfterRenderAsync(firstRender);
+    }
+}
 ```
