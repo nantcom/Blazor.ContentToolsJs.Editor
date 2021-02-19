@@ -1,4 +1,4 @@
-﻿# CoreSharp.ContentToolsJs.Editor
+﻿# CoreSharp.ContentToolsJs.Editor [![NuGet](https://img.shields.io/badge/nuget-v1.0.0-blue)](https://www.nuget.org/packages/CoreSharp.ContentToolsJs.Editor/)
 WYSIWYG Editor for Blazor applications - Uses [CotentTools Js](https://getcontenttools.com/ "CotentTools Js.com")
 
 ### Why using ContentTools Editor?
@@ -17,13 +17,9 @@ Also, Needing to remove `<p>` tag every time when content become editable is not
 
 **NOTE** Quill Js will support `<table>` when version 2.0 has been release
 
-### Installation
+### Download
 
-Install from NuGet using the following command:
-
-`Install-Package CoreSharp.ContentToolsJs.Editor`
-
-Or via the Visual Studio package manger.
+CoreSharp.ContentToolsJs.Editor is available as a NuGet package: [![NuGet](https://img.shields.io/badge/nuget-v1.0.0-blue)](https://www.nuget.org/packages/CoreSharp.ContentToolsJs.Editor/)
 
 ### Setup
 In Blazor Server applications, Include the following CSS files in `Pages\_Host.cshtml`.
