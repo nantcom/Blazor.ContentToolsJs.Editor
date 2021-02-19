@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Tananut Songsiriwith</Authors>
+    <Company>Nancom Company Limited</Company>
+    <Product>CoreSharp.ContentToolsJs.Editor</Product>
+    <Copyright>Tananut Songsiriwith</Copyright>
+    <PackageReleaseNotes>WYSIWYG Editor for Blazor applications - Uses ContentTools (https://getcontenttools.com/) more detail comming soon</PackageReleaseNotes>
+    <PackageProjectUrl>https://github.com/nantcom/Blazor.ContentToolsJs.Editor</PackageProjectUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Content Remove="compilerconfig.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <_ContentIncludedByDefault Remove="wwwroot\default.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="compilerconfig.json" />
+  </ItemGroup>
+
+  
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.3" />
+    <PackageReference Include="NUglify" Version="1.13.2" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,58 @@
+﻿/* Everysite is difference. if dev need to customize default style, DO NOT import default.css or default.min.css */
+[data-editable] {
+    /* Alignment styles for images, videos and iframes in editable regions */
+    /* Center (default) */
+    iframe,
+    image,
+    [data-ce-tag=img],
+    img,
+    video {
+        clear: both;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 100%;
+    }
+    /* Left align */
+    .align-left {
+        clear: initial;
+        float: left;
+        margin-right: 0.5em;
+    }
+    /* Right align */
+    .align-right {
+        clear: initial;
+        float: right;
+        margin-left: 0.5em;
+    }
+    /* Alignment styles for text in editable regions */
+    .text-center {
+        text-align: center;
+    }
+
+    .text-left {
+        text-align: left;
+    }
+
+    .text-right {
+        text-align: right;
+    }
+
+    .table-layout-auto {
+        table-layout: auto;
+    }
+
+    .table-layout-fixed {
+        table-layout: fixed;
+    }
+
+    .table-full-width {
+        width: 100%;
+    }
+
+    .table-content-alight-top {
+        th, td {
+            vertical-align: top;
+        }
+    }
+}

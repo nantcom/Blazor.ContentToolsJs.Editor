@@ -1,0 +1,23 @@
+﻿@inject ContentToolsJsInterop contentToolsEditor
+
+<div data-editable data-name="@this.DataName">
+    @ChildContent
+</div>
+
+@code {
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string DataName { get; set; }
+
+    [Parameter]
+    public EventCallback<EditorContentSaveEventArgs> OnSave { get; set; }
+
+    protected override Task OnInitializedAsync()
+    {
+        contentToolsEditor.AddCallBackSaveFunction(this.DataName, this.OnSave);
+        return base.OnInitializedAsync();
+    }
+} 
